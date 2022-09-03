@@ -4,10 +4,15 @@
 // Get references to the #generate element (original comment)
 //so, actually putting in something between the parentheses for generatePassword didn't define it.
 //Maybe i have to create a var for it?
+// Now the error says that generatePassword is not a function...
 
 var generateBtn = document.querySelector("#generate");
-var generatePassword =document.querySelector("#placeholder");
 
+var generatePassword = document.querySelector("#password");
+
+function generatePassword( passLength, lowerCase, upperCase, numbers, special){
+    return passLength + lowerCase + upperCase + numbers, + special; 
+}
 // I should have 5 options when creating the passwords,
 //And to get all possible choices, I have to create arrays for the character types.
 
