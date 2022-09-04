@@ -15,7 +15,7 @@ var generatePassword = document.querySelector("#password");
 // Length of Password (I wouldn't need an array for this variable, as it's determinating the length.)
 // so I have to pull from my HTML?
 // I think I have to create an if statement as somepoint to set parameters...
-var passLength = document.getElementById("length").value;
+const passLength = document.getElementById("length").value;
 
 // Character Type: Lowercase
 const lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
