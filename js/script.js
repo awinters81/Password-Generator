@@ -76,23 +76,34 @@ var special = confirm(
 
 //Okay, so now I have all these variables set up (declared) for my questions. 
 //I need to use them somehow (or have the value read...)
+ var passwordText = {
+
+  length: length,
+  lower: lower,
+  upper: upper,
+  number: number,
+  special: special
+ };
+
+  return passwordText;
 
 }
 
 //generatePassword shows up as undefined in the console. So it looks like I'd have to
 //create a function for this too as the variable password in the function writePassword has to pull from it.
 
-//function generatePassword() {
+function generatePassword() {
 
 // So to generate the password, I need my options, which I'm creating in my passwordOpt function.
 //so, it would make sense for it to be part of this function. as a variable?
 
-//var pullOptions = passwordOpt();
+var pullOptions = passwordOpt();
 
 //But now this variable is not being used... I don't have all my options yet, so let me
 //go back to the password options.
 
-//}
+
+}
 
 // Write password to the #password input (original)
 // Now the console states that generatePassword is not a function.
@@ -111,3 +122,4 @@ var special = confirm(
 //Add event listener to generate button (original)
 
 //generateBtn.addEventListener("click", writePassword);
+
