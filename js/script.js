@@ -108,7 +108,7 @@ if (pullOptions.special) {
 //Well, each time I'll click the button, I should get a different result. so I guess I would be a type of loop...
 
 for (var i = 0; i < connectOptions.length; i++) {
-  result[i] = connectOptions[i];
+  final[i] = connectOptions[i];
 }
 
 return final.join('');
