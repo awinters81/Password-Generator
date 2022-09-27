@@ -1,11 +1,8 @@
-// Assignment code here
-// Restarting again...
-
 // Get references to the #generate element (original)
 
-
-//So let me create a variable for it. I chose the placeholder because the finished password has to
-//take the place of "Your Secure Password".
+//Okay, so the code works... sort of. I have all my prompts
+// however, I got all the options from the arrays I created,
+//instead of the length I wanted and a random selection
 
 var generateBtn = document.querySelector("#generate");
 
