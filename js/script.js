@@ -8,27 +8,14 @@
 //take the place of "Your Secure Password".
 
 var generateBtn = document.querySelector("#generate");
-var generatePassword = document.querySelector("#placeholder")
-
-//Removing the variables for the checkboxes as I realized that I have to return
-//prompts for each option.
-
-//and let me create arrays for the characters like before...
 
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numbers = ["0","1","2","3","4","5","6","7","8","9"];
 var specials = ["!","@","#","$","%","&","*"];
 
-
-//So when I type in a number from 8-128, I should get a password with that number of characters.
-//so I think I need an if statement at some point... But let me start with the prompt...
-
 function passwordOpt(){
 
-// I don't a var for length yet, so...
-// parse in Java lets me break down info that is in one form into a form that is easier to 
-// work with.
 
   var length = parseFloat(
     prompt('How many characters would you like?')
@@ -43,12 +30,6 @@ if(length < 8 ){
 if(length > 128){
   return null;
 } 
-
-//I tried creating these as actual functions at first, but that didn't work beacause I realized that I 
-//would have to create more variables and connect them to more functions, which doesn't make sense when I just need 
-//it to ask questions to say yes or no to a choice
-// and I realized confirm is a type of function, really, it's more like a specific type of alert just i don't have to state that
-//"window" before it. it will show up automatically.
 
 // ask if it can include lowercase
 
@@ -76,6 +57,7 @@ var special = confirm(
 
 //Okay, so now I have all these variables set up (declared) for my questions. 
 //I need to use them somehow (or have the value read...)
+
  var passwordText = {
 
   length: length,
@@ -86,11 +68,7 @@ var special = confirm(
  };
 
   return passwordText;
-
 }
-
-//generatePassword shows up as undefined in the console. So it looks like I'd have to
-//create a function for this too as the variable password in the function writePassword has to pull from it.
 
 function generatePassword() {
 
@@ -99,27 +77,55 @@ function generatePassword() {
 
 var pullOptions = passwordOpt();
 
-//But now this variable is not being used... I don't have all my options yet, so let me
-//go back to the password options.
+var final = []
 
+//and I need some way to hold the characters that I'm going to use so...
+
+var connectOptions = [];
+
+//definitely need more conditional statements...
+
+if (pullOptions.lower) {
+  connectOptions.push(lowerCase);
+}
+
+if (pullOptions.upper) {
+  connectOptions.push(upperCase);
+}
+
+if (pullOptions.number) {
+  connectOptions.push(numbers);
+}
+
+if (pullOptions.special) {
+  connectOptions.push(specials)
+}
+
+//I have all these conditionals, but nowhere to put them in a sense....so let me create another variable
+//above
+
+//I didn't use the length option... How can I use this?
+//Well, each time I'll click the button, I should get a different result. so I guess I would be a type of loop...
+
+for (var i = 0; i < connectOptions.length; i++) {
+  result[i] = connectOptions[i];
+}
+
+return final.join('');
+}
+
+
+// Write password to the #password input (original)
+
+function writePassword() {
+ 
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
+passwordText.value = password;
 
 }
 
-// Write password to the #password input (original)
-// Now the console states that generatePassword is not a function.
-// I think i need to add a function below that when I go to generate my password, it will 
-//generate a password based on the length specified and the options chosen.
-//So it needs to return something
-
-//function writePassword() {
- 
-// var password = generatePassword();
-  //var passwordText = document.querySelector("#password");
-  //passwordText.value = password;
-
-//}
-
 //Add event listener to generate button (original)
 
-//generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword);
 
