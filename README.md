@@ -10,9 +10,10 @@ CSS
 JavaScript
 
 <h2>Website</h2>
-
+https://awinters81.github.io/Password-Generator/
 
 <h2>Contribution</h2>
 Alexandria Winters
 
 <h2>Screenshots</h2>
+<img src= "./Screenshot.png">
